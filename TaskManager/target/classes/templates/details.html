@@ -1,0 +1,32 @@
+<!-- src/main/resources/templates/details.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Details</title>
+</head>
+<body>
+
+<h2>Task Details</h2>
+
+<div>
+    <strong>ID:</strong> <span th:text="${task.id}"></span>
+</div>
+<div>
+    <strong>Title:</strong> <span th:text="${task.title}"></span>
+</div>
+<div>
+    <strong>Description:</strong> <span th:text="${task.description}"></span>
+</div>
+<div>
+    <strong>Due Date:</strong> <span th:text="${#dates.format(task.dueDate, 'yyyy-MM-dd')}"></span>
+</div>
+<!-- Add more details as needed -->
+
+<a th:href="@{/tasks}" class="btn btn-primary">Back to Task List</a>
+
+</body>
+</html>
